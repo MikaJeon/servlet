@@ -33,8 +33,6 @@ public class ResponseHeaderServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();//리스판스에 쓰자
         writer.println("ok");
     }
-
-
     private void content(HttpServletResponse response) {//컨텐트 메서드를 만들고 위 셋 헤더를 여기서 설정해줘도 됨
         //Content-Type: text/plain;charset=utf-8
         //Content-Length: 2

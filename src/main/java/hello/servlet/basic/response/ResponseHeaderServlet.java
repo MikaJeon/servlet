@@ -46,13 +46,13 @@ public class ResponseHeaderServlet extends HttpServlet {
         //response.setHeader("Set-Cookie", "myCookie=good; Max-Age=600");
         Cookie cookie = new Cookie("myCookie", "good");
         cookie.setMaxAge(600); //600초
-        response.addCookie(cookie);
+        response.addCookie(cookie);//쿠키 만든 후 쿠키 추가하기~
     }
     private void redirect(HttpServletResponse response) throws IOException {
         //Status Code 302
-        //Location: /basic/hello-form.html
+        //Location: /basic/hello-form.html 여기로 로케이션 헤더를 보낼 것.
         //response.setStatus(HttpServletResponse.SC_FOUND); //302
         //response.setHeader("Location", "/basic/hello-form.html");
-        response.sendRedirect("/basic/hello-form.html");
+        response.sendRedirect("/basic/hello-form.html");//위의 두 코드로 해도 되는데, 이 한줄로 바로 리다이렉트 되기도 함 로케이션 정보를 넣어주는 것. 상태코드가 302면서 로케이션 코드 있어서 리다이렉트 됨.
     }
 }
